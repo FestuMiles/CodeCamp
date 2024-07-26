@@ -1,0 +1,325 @@
+:root{
+    --orange: #ffbb01;
+}
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+section{
+    padding: 2rem 9%;
+}
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153, .05);
+}
+.heading span{
+    color: var(--orange);
+}
+.button{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+.button:hover{
+    background: var(--orange);
+}
+    /* The header section  */
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    background: #fff;
+}
+header .logo{
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+}
+header .logo span{
+    color: var(--orange);
+}
+header .nav-bar a{
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #666;
+}
+
+header .nav-bar a:hover{
+    color: var(--orange);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .menu-bar{
+    color: #333;
+    font-size: 3rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    display: none;
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+@media (max-width:768px){
+    html .menu-bar{
+        display: block;
+    }
+    header .nav-bar{
+        position: absolute;
+        top: 100%;left: 0;right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header #toggler:checked ~ .nav-bar{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    header .nav-bar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, .1);
+        display: block;
+    }
+    .home .content h3{
+        font-size: 5rem;
+    }
+    .home .content span{
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .home .content h3{
+        font-size: 1rem;
+    }
+    .home .content span{
+        font-size: 1.5rem;
+    }
+    .home .content p{
+        font-size: 1rem;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+}
+/* The header section end */
+
+/* The home section */
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../images/back5.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .content h3{
+    font-size: 6rem;
+    color: var(--orange);
+}
+.home .content span{
+    font-size: 3.5rem;
+    padding: 1rem 0;
+    line-height: 1.5;
+    color: #fff;
+}
+.home .content p{
+    font-size: 2rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+/* The home section end  */
+
+/* The abou section  */
+.about .row{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+.about .row .about-pic{
+    flex: 1 1 40rem;
+    position: relative;
+}
+.about .row .about-pic img{
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    height: 100%;
+    object-fit: cover;
+}
+.about .row .about-pic h3{
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    font-size: 3rem;
+    color: #333;
+    background: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+.about .row .content{
+    flex: 1 1 40rem;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color: #333;
+}
+.about .row .content p{
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+ /* The about section end  */
+
+ /* The hair cuts section  */
+.hair-cuts .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.hair-cuts .container .box{
+    flex: 1 1 3rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    position: relative;
+}
+.hair-cuts .container .box .discount{
+    position: absolute;
+    top: 1rem; left: 1rem;
+    padding: .7rem 1rem;
+    font-size: 2rem;
+    color: transparent;
+    background: rgba(255, 51, 153, .05);
+    z-index: 1;
+    border-radius: .5rem;
+}
+.hair-cuts .container .box .image{
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+.hair-cuts .container .box .image img{
+    height: 25rem;
+}
+.hair-cuts .container .box:hover .image img{
+    transform: scale(1.1);
+}
+.hair-cuts .container .box .content{
+    padding: 2rem;
+    text-align: center;
+}
+.hair-cuts .container .box .content h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+.hair-cuts .container .box .content .price{
+    font-size: 2.5rem;
+    color: var(--orange);
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+.hair-cuts .container .box .content .price span{
+    font-size: 1.5rem;
+    color: #999;
+    font-weight: lighter;
+    text-decoration: line-through;
+}
+ /* The hair cut section ends  */
+
+ /* The customer review section  */
+.customer-review .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.customer-review .container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    padding: 3rem 2rem;
+    position: relative;
+    border: .1rem solid rgba(0, 0, 0, .1);
+}
+.customer-review .container .box .customer{
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+.customer-review .container .box p{
+    color: #999;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+.customer-review .container .box .customer img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1rem;
+}
+.customer-review .container .box .customer h3{
+    font-size: 2rem;
+    color: #333;
+}
+
+.customer-review .container .box .customer span{
+    font-size: 1.5rem;
+    color: #999;
+}
+ /* The customer review section ends  */
